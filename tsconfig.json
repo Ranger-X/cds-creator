@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "outDir": "build",
+    "baseUrl": "src",
+    "declaration": true,
+    "experimentalDecorators": true,
+    "target": "ES6",
+    "module": "CommonJS",
+    "moduleResolution": "node"
+  },
+  "exclude": ["src/**/__tests__/*", "node_modules/**"]
+}
