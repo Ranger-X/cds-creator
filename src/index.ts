@@ -9,4 +9,10 @@ export * from "./Consumer";
 export * from "./ConsumerAddressRecord";
 export * from "./TrailerRecord";
 
-export * from "./TakeOn";
+//export * from "./TakeOn";
+
+import TakeOn from './TakeOn';
+
+export {
+  TakeOn
+}

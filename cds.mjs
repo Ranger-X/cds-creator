@@ -1,15 +1,8 @@
-# cds-creator
-creator CDS-files
-
-
-## Install
-//TODO
-
-## Use
-
-```js
-import { TakeOn } from "@karmared/cds-creator";
+//import { TakeOn } from "@karmared/cds-creator/TakeOn";
+import { TakeOn }  from "@karmared/cds-creator";
 import fs from "fs"
+//TakeOn = require('@karmared/cds-creator');
+//fs = require('fs');
 
 const file = new TakeOn();
 
@@ -42,14 +35,4 @@ const address = consumerBlock.addAddress()
 address.accountHolderNumber = 1
 
 // save data in CDS-file
-fs.writeFileSync("./test.cds", file.toString());
-```
-
-## Generate test.cds
-```bash
-# go to dir with code and do:
-docker build -t cds .
-docker run -it -v $(pwd)/data:/data cds
-
-# now you should get ./data/test.cds file
-```
+fs.writeFileSync("/data/test.cds", file.toString());

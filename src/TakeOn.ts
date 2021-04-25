@@ -72,7 +72,7 @@ class AccountBlocks {
   }
 }
 
-export class TakeOn {
+export default class TakeOn {
   header: HeaderRecord;
   accounts: AccountBlocks[] = [];
   trailer: TrailerRecord;
