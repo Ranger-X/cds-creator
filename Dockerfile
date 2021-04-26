@@ -12,13 +12,14 @@ WORKDIR ${APP_DIR}
 
 # Копирование файлов проекта
 COPY . /${APP_DIR}/${SRC_DIR}/
-COPY cds.mjs /${APP_DIR}/
 
-RUN npm install --save typescript @types/node
+COPY cmd.sh /cmd.sh
+RUN chmod +x /cmd.sh
 
-RUN cd /${APP_DIR}/${SRC_DIR} && /${APP_DIR}/node_modules/.bin/tsc && npm link
-RUN cd /${APP_DIR} && npm link "@karmared/cds-creator"
+RUN cd /${APP_DIR}/${SRC_DIR} && npm install --save typescript @types/node && ./node_modules/.bin/tsc && npm link
+RUN cd /${APP_DIR} && npm install iconv-lite && npm link "@karmared/cds-creator"
 
 VOLUME /data
+VOLUME /scripts
 
-CMD ["node", "cds.mjs"]
+CMD ["/cmd.sh"]
