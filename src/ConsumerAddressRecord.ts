@@ -10,7 +10,7 @@ const fields: FiledType[] = [
   { name: "financeType", descriptor: Character(2) },
   { name: "consumerAccountNumber", descriptor: Character(40) },
   { name: "accountHolderNumber", descriptor: Numeric(2) },
-  { name: "specialInstructionIndicator", descriptor: Numeric(1) },
+  { name: "specialInstructionIndicator", descriptor: Character(1) },
   { name: "addressCurrent", descriptor: Character(1) },
   { name: "addressType", descriptor: Character(1) },
   { name: "addressStartDate", descriptor: DateFormat() },
@@ -36,7 +36,7 @@ export type ConsumerAddressRecord = {
   financeType: CharacterType;
   consumerAccountNumber: CharacterType;
   accountHolderNumber: NumericType;
-  specialInstructionIndicator: NumericType;
+  specialInstructionIndicator: CharacterType;
   addressCurrent: CharacterType;
   addressType: CharacterType;
   addressStartDate: DateFormatType;
