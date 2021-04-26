@@ -10,15 +10,15 @@ const fields: FiledType[] = [
   { name: "financeType", descriptor: Character(2) },
   { name: "consumerAccountNumber", descriptor: Character(40) },
   { name: "accountHolderNumber", descriptor: Numeric(2) },
-  { name: "specialInstructionIndicator", descriptor: Numeric(2) },
+  { name: "specialInstructionIndicator", descriptor: Numeric(1) },
   { name: "addressCurrent", descriptor: Character(1) },
   { name: "addressType", descriptor: Character(1) },
   { name: "addressStartDate", descriptor: DateFormat() },
   { name: "addressEndDate", descriptor: DateFormat() },
   { name: "suppliedAddressFormat", descriptor: Character(1) },
   { name: "flatNr", descriptor: Character(6) },
-  { name: "houseNr", descriptor: Character(5) },
-  { name: "buildingConstructionNr", descriptor: Character(5) },
+  { name: "houseNr", descriptor: Character(6) },
+  { name: "buildingConstructionNr", descriptor: Character(6) },
   { name: "block", descriptor: Character(20) },
   { name: "prospect", descriptor: Character(50) },
   { name: "town", descriptor: Character(50) },
@@ -26,7 +26,7 @@ const fields: FiledType[] = [
   { name: "republic", descriptor: Numeric(2) },
   { name: "country", descriptor: Character(2) },
   { name: "postal", descriptor: Character(10) },
-  { name: "homeTelephoneNumber", descriptor: Character(10) },
+  { name: "homeTelephoneNumber", descriptor: Character(16) },
 ];
 
 export type ConsumerAddressRecord = {
