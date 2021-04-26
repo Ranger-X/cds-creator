@@ -13,7 +13,7 @@ const fields: FiledType[] = [
   { name: "totalNameRecords", descriptor: Numeric(9) },
   { name: "totalAddressRecords", descriptor: Numeric(9) },
   { name: "filler", descriptor: Numeric(9) },
-  { name: "totalEmployerRectrds", descriptor: Numeric(9) },
+  { name: "totalEmployerRecords", descriptor: Numeric(9) },
   { name: "filler1", descriptor: Numeric(9) },
   { name: "filler2", descriptor: Numeric(20) },
   { name: "totalLegalRecords", descriptor: Numeric(9) },
@@ -27,7 +27,7 @@ const fields: FiledType[] = [
 
 export type TrailerRecord = {
   recordType: NumericType;
-  varsionNumber: NumericType;
+  versionNumber: NumericType;
   subscriberCode: NumericType;
   financeType: CharacterType;
   totalAccountRecords: NumericType;
@@ -35,7 +35,7 @@ export type TrailerRecord = {
   totalNameRecords: NumericType;
   totalAddressRecords: NumericType;
   filler: NumericType;
-  totalEmployerRectrds: NumericType;
+  totalEmployerRecords: NumericType;
   filler1: NumericType;
   filler2: NumericType;
   totalLegalRecords: NumericType;

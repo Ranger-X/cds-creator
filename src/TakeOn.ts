@@ -88,7 +88,33 @@ export default class TakeOn {
     return accountBlock;
   }
 
+  calculateTrailer() {
+    let totalHistoryRecords = 0;
+    let totalNameRecords = 0;
+    let totalAddressRecords = 0;
+
+    this.accounts.forEach((account) => {
+        totalHistoryRecords += account.histories.length;
+        totalNameRecords    += account.consumers.length;
+
+        totalAddressRecords = account.consumers.reduce((sum, consumerBlock) => {
+            return sum = sum + consumerBlock.addresses.length;
+        }, totalAddressRecords)
+    });
+
+    this.trailer.totalAccountRecords = this.accounts.length;
+    this.trailer.totalHistoryRecords = totalHistoryRecords;
+    this.trailer.totalNameRecords    = totalNameRecords;
+    this.trailer.totalAddressRecords = totalAddressRecords;
+
+//     console.log("trailer calc: totalAccountRecords: %i; totalHistoryRecords: %i; totalNameRecords: %i; totalAddressRecords: %i",
+//         this.trailer.totalAccountRecords, this.trailer.totalHistoryRecords, this.trailer.totalNameRecords, this.trailer.totalAddressRecords
+//     );
+  }
+
   toString() {
+    this.calculateTrailer();
+
     return (
       this.header.toString() +
       EOL +
