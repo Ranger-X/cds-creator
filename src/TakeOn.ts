@@ -120,7 +120,8 @@ export default class TakeOn {
       EOL +
       this.accounts.map(account => account.toString()).join(EOL) +
       EOL +
-      this.trailer.toString()
+      this.trailer.toString() +
+      EOL
     );
   }
 }
