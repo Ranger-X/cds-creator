@@ -123,7 +123,17 @@ address.town = "МОСКВА";
 address.republic = 99;
 address.country = "RU";
 
-const cdsFileName = new Date().toISOString().replace(/T/, '').replace(/:/g, '').replace(/\..+/, '') + ".cds";
+// trailer record
+const trailer = file.trailer;
+trailer.subscriberCode = subscriberCode;
+trailer.financeType = financeType;
+
+const cdsFileName = "SUB_" +
+ String(subscriberCode).padStart(6, "0") + "_" +
+ dateFormat(new Date(), "yyyymmdd") + "_" +
+ financeType.padStart(2, "0") + "_" +
+ String(retry).padStart(3, "0") +
+ ".cds";
 
 var buf = iconv.encode(file.toString(), 'win1251');
 

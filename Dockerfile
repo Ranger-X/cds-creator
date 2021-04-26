@@ -17,7 +17,7 @@ COPY cmd.sh /cmd.sh
 RUN chmod +x /cmd.sh
 
 RUN cd /${APP_DIR}/${SRC_DIR} && npm install --save typescript @types/node && ./node_modules/.bin/tsc && npm link
-RUN cd /${APP_DIR} && npm install iconv-lite && npm link "@karmared/cds-creator"
+RUN cd /${APP_DIR} && npm install iconv-lite dateformat && npm link "@karmared/cds-creator"
 
 VOLUME /data
 VOLUME /scripts
